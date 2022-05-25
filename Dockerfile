@@ -1,9 +1,6 @@
 FROM ubuntu:20.04
-
 ENV DEBIAN_FRONTEND=noninteractive
-
 WORKDIR /app
-
 RUN apt-get update
 RUN echo y | apt-get install locales
 RUN echo y | apt install build-essential
@@ -12,7 +9,6 @@ RUN apt -qq install -y --no-install-recommends \
     git \
     gnupg2 \
     wget \
-
 RUN set -ex; \
     apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -26,11 +22,9 @@ RUN set -ex; \
 	&& apt-get autoclean \
         && apt-get autoremove \
         && rm -rf /var/lib/apt/lists/*
-
 RUN pip3 install setuptools wheel yarl multidict
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 RUN dpkg-reconfigure locales
 COPY . /app
-
 CMD ["python3", "bot.py"]
