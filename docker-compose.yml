@@ -2,3 +2,9 @@ version: "3.10"
 services:
   worker:
     build: .
+    environment:
+       API_ID: $API_ID
+       API_HASH: $API_HASH
+       STRING_SESSION: $STRING_SESSION
+       FORWARD_FROM_CHAT_ID: $FORWARD_FROM_CHAT_ID
+       FORWARD_TO_CHAT_ID: $FORWARD_TO_CHAT_ID
