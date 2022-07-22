@@ -30,10 +30,10 @@ class Config(object):
     HEROKU_APP = heroku3.from_key(HEROKU_API_KEY).apps()[HEROKU_APP_NAME] if HEROKU_API_KEY and HEROKU_APP_NAME else None
     # Message Texts
     HELP_TEXT = """
-This UserBot can forward messages from any Chat to any other Chat also you can kang all messages from one Chat to another Chat.
+This Bot can forward messages from any Chat to any other Chat also you can kang all messages from one Chat to another Chat.
 
 👨🏻‍💻 **Commands:**
-• `!start` - Check UserBot Alive or Not.
+• `!start` - Check Bot Alive or Not.
 • `!help` - Get this Message.
 • `!kang` - Start All Messages Kanger.
 • `!restart` - Restart Heroku App Dyno Workers.
