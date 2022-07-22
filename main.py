@@ -1,5 +1,5 @@
 # (c) @AbirHasan2005 | Thomas Shelby
-# This is Telegram Messages Forwarder UserBot!
+# This is Telegram Messages Forwarder
 # Use this at your own risk. I will not be responsible for any kind of issue while using this!
 
 import os
@@ -26,7 +26,7 @@ async def main(client: Client, message: Message):
             await asyncio.sleep(e.x)
         return
     if (message.text == "!start") and (message.from_user.id == (await client.get_me()).id):
-        await message.edit(text=f"Hi, **{(await client.get_me()).first_name}**!\nThis is a Forwarder Userbot by @AbirHasan2005", parse_mode="Markdown",
+        await message.edit(text=f"Hi, **{(await client.get_me()).first_name}**!\nThis is a Forwarder by @AbirHasan2005", parse_mode="Markdown",
                            disable_web_page_preview=True)
     elif (message.text == "!help") and (message.from_user.id == (await client.get_me()).id):
         await message.edit(
@@ -35,7 +35,7 @@ async def main(client: Client, message: Message):
     elif (message.text in ["!restart", "!stop"]) and (message.from_user.id == (await client.get_me()).id):
         if Config.HEROKU_APP is None:
             await message.edit(
-                text="Restarting Userbot ...",
+                text="Restarting  ...",
                 parse_mode="Markdown",
                 disable_web_page_preview=True
             )
